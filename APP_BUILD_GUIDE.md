@@ -1,6 +1,6 @@
 # MindMirror app: rebuild guide for Round 2
 
-**Owner:** Pankaj (tech lead), with Kishore on screens and Merel on all words and content.
+**Owners:** Pankaj (tech lead: engine, hub, integration), Kishore (UI components, check-in, breathe), Merel (games, Play room, Support screen, all words). Ownership by folder is in section 3.
 **Goal by hour 24:** a working web app on the laptop where a student checks in, sees early signs compared with *their own* normal, talks to the companion (typed or through the necklace), and is pointed to the right support. Every number has its proof.
 
 ---
@@ -16,11 +16,13 @@ Round 1 promised a lot (8 features, two visual worlds, games, a watch, on-device
 | **Must** | Support ladder + crisis routing (Tele-MANAS 14416, 112, campus counsellor) | the "find support" half of the problem statement, and safety |
 | **Must** | Companion chat (typed), through the hub | AI that explains, never diagnoses |
 | **Must** | Necklace voice check-ins appear live in the app | the wow moment |
-| **Should** (hours 12 to 18) | Planner: deadlines + hours needed vs hours planned ("PressureMap") | ties academic pressure to well-being; Round 1 judges liked it |
-| **Should** | Breathing room (one 4-in 6-out animation) | a calming action after a heavy check-in |
-| **Should** | "Explore with sample data" button (3 weeks of a student drifting) | the demo can't wait 2 weeks for real data |
+| **Must** | **Play room: 3 calm games** (Bubble wrap, Worry shredder, Ripples pond), built by Merel | "pressure release" you can feel; a judge can try it in 10 seconds |
+| **Must** | "Explore with sample data" button (3 weeks of a student drifting) | the demo can't wait 2 weeks for real data |
+| **Should** | Breathing room (one 4-in 6-out animation), built by Kishore | a calming action after a heavy check-in |
+| **Should** | Planner: deadlines + hours needed vs hours planned ("PressureMap") | ties academic pressure to well-being; Round 1 judges liked it |
 | **Could** | Journal, habits, export/delete all data | only if ahead of time |
-| **Cut** | Two visual worlds, ASCII games, smartwatch, on-device LLM, animated characters | beautiful, but each one is a day of work |
+| **Later** (say so on the "next steps" slide) | Smartwatch heart rate and sleep, battery-powered necklace, fully on-device AI | real roadmap, not for 24 h |
+| **Cut** | Two visual worlds (themes), animated characters | decided by Pankaj, 30 Oct |
 
 **Problem statement → feature map** (Merel uses this in the pitch):
 
@@ -95,10 +97,19 @@ mindmirror/
       hub.ts              chat(), talk(), live events
       support.ts          support ladder + crisis words
     screens/
-      Home.tsx  CheckIn.tsx  Insights.tsx  Companion.tsx  Support.tsx  Planner.tsx  Breathe.tsx
-    components/           Kishore's buttons, cards, sliders, icons
+      Home.tsx  Insights.tsx  Companion.tsx  Planner.tsx      Pankaj
+      CheckIn.tsx  Breathe.tsx                                Kishore
+      Support.tsx  Play.tsx                                   Merel
+    games/                Merel: BubbleWrap.tsx, WorryShredder.tsx, Ripples.tsx
+    components/           Kishore: ui.tsx, Weather.tsx, SignalCard.tsx, Chat.tsx
     content/
       copy.ts             Merel's words: every label, prompt, tip
+  firmware/
+    mindmirror_necklace/  Pankaj
+    tests/                Kishore (hardware tests 1 to 4)
+  docs/
+    research.md           Merel (interview notes and quotes)
+    hardware-photos/      Kishore
   README.md
 ```
 
@@ -206,7 +217,8 @@ Rule: **code calculates, AI only explains.** This file has no AI and no React, s
 | **Check-in** | 5 questions, one per card: mood (5 faces), stress, energy (sliders), sleep hours (stepper), "talked to someone you like?" (yes/no). Optional note. Under 60 s. | Kishore |
 | **Insights** | weather at top; 5 signal cards (icon, level colour, proof sentence); one Recharts line: sleep last 21 days with a dashed baseline line | Pankaj (data), Kishore (cards) |
 | **Companion** | chat bubbles; text box; "Hold to talk" mic button (web version of the necklace); list of necklace turns | Pankaj |
-| **Support** | the ladder as 4 steps, current rung highlighted; buttons: call 14416, call 112, campus counsellor; "not a medical device" line | Merel writes, Kishore builds |
+| **Support** | the ladder as 4 steps, current rung highlighted; buttons: call 14416, call 112, campus counsellor; "not a medical device" line | Merel |
+| **Play** | 3 game cards → Bubble wrap, Worry shredder, Ripples pond; no scores, no timers, no way to lose | Merel |
 | **Planner** (should) | add task (title, due, hours needed, hours planned); a warning card when the next 3 days are overloaded, with "move to tomorrow" | Pankaj |
 | **Breathe** (should) | one circle that grows for 4 s and shrinks for 6 s, 1-minute timer | Kishore |
 
@@ -302,3 +314,13 @@ If you're behind at hour 12, cut Planner and Breathe. Never cut the support/cris
 | No internet at all | run the hub with `MOCK_AI=1`: fixed transcript and reply; the app still logs the turn. Say so honestly if you have to demo this way. |
 | Necklace dies | "Hold to talk" button in the Companion screen |
 | Laptop dies | push to GitHub every hour; the second laptop can run everything |
+
+---
+
+## 11. Pankaj's 2 AM Claude pass (integrate, don't replace)
+
+Paste this to Claude with the repo open (Claude Code, or upload the `src/` folder):
+
+> This is MindMirror, a React + TypeScript + Tailwind v4 + Dexie app built at a hackathon by three people. Finish and connect it into one working app. Rules: (1) **Keep every file under `src/games/`, `src/components/`, `src/content/`, `src/screens/CheckIn.tsx`, `Breathe.tsx`, `Support.tsx` and `Play.tsx`: they were written by my teammates.** Fix bugs in them with small edits only; don't rewrite, rename or move them. (2) Use `src/content/copy.ts` for all user-facing text. (3) Wire navigation: Home → Check-in, Insights, Companion, Support, Play, Breathe. (4) Use `src/lib/signals.ts` for every number shown and keep its tests passing. (5) Show urgent help (Tele-MANAS 14416, 112) whenever a crisis flag is set. Then list what you changed in each file.
+
+Commit Claude's work in small commits ("Wire navigation", "Connect insights to engine"), not one giant one.

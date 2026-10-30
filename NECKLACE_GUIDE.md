@@ -48,6 +48,8 @@ My opinion, for a 24-hour rebuild with two first-timers: **Wi-Fi + laptop hub is
 | Push button (4-leg tactile) | the talk button | |
 | Also bring | USB power bank + its cable, insulation tape, cardboard/foam, a cord or lanyard, hot glue | the necklace runs from the power bank |
 
+**Wi-Fi needs no extra parts.** The ESP32 has Wi-Fi built in. You only need a phone hotspot (set to 2.4 GHz) and the laptop. Everything on this list is enough.
+
 **There is no battery or charger in this parts list, so the necklace is powered by a USB cable to a small power bank in the student's pocket.** That is normal for a hackathon prototype. Say "battery version is next" if judges ask.
 
 ### The one thing you must do before the event: solder the headers
