@@ -109,15 +109,16 @@ If something slips, cut in this order: Ripples pond → Breathe → planner. **N
 
 ## 4. Who presents what (final presentation)
 
-| Part | Speaker |
-|---|---|
-| Opening, problem, solution, safety, impact, closing | **Merel** |
-| Live demo: app | **Merel** drives, Kishore narrates the screens he built |
-| Live demo: necklace | **Kishore** holds it and speaks; **Pankaj** shows the hub log |
-| Technical questions | **Pankaj** first, then whoever built that part |
-| "How did you work as a team?" | **Kishore** (it lands better from the first-timer) |
+**Merel speaks for the whole presentation.** Pankaj and Kishore help with their hands and step in only if a judge asks them directly.
 
-The speaker notes in the deck say exactly what to say on each slide.
+| Part | Who |
+|---|---|
+| Every slide, opening to closing | **Merel** speaks |
+| Live demo: app | **Merel** drives the laptop and talks |
+| Live demo: necklace | **Kishore** hands Merel the necklace; Merel speaks into it. **Pankaj** keeps the hub log on screen |
+| Technical questions | Merel gives the one-line answer, then may hand to **Pankaj** for details |
+
+The full script is in [PITCH_SCRIPT.md](PITCH_SCRIPT.md).
 
 ---
 
