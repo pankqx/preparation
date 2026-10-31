@@ -14,6 +14,7 @@ This repo holds the plans. The project itself is built from scratch in a new rep
 | [NECKLACE_GUIDE.md](NECKLACE_GUIDE.md) | Pankaj + Kishore | the AI necklace from zero: parts, soldering, pin tables, 4 hardware tests, the laptop hub, firmware, troubleshooting, making the pendant |
 | [MEREL_GUIDE.md](MEREL_GUIDE.md) | Merel | the project in plain words, your code (3 games, Play room, Support screen, app words), interviews, leading the presentation and the demo video |
 | [KISHORE_GUIDE.md](KISHORE_GUIDE.md) | Kishore | the project in plain words, the necklace explained deeply, your code (UI components, check-in, breathe), hardware tests, the pendant case |
+| [PITCH_SCRIPT.md](PITCH_SCRIPT.md) | Merel (everyone: sections 1 and 9) | the full pitch in simple English with Merel speaking every slide, features, tech stack in plain words, hook points, short versions, how to speak, Q&A, practice plan, a printable cue card |
 | [JUDGE_QA.md](JUDGE_QA.md) | **everyone** | ~70 judge questions with answers, who leads and who backs up, what to say when a judge walks up |
 | [deck/MindMirror_Final.pptx](deck/MindMirror_Final.pptx) | **everyone** | the final presentation with a speaker script under every slide |
 | [reference/](reference) | Pankaj | hub server and ESP32 code used by the necklace guide |

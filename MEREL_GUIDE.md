@@ -223,7 +223,7 @@ Then fill in the blanks (___) in [JUDGE_QA.md](JUDGE_QA.md), and add a quote to 
 
 ## Part 5. The presentation and demo
 
-You lead. The deck (`deck/MindMirror_Final.pptx`) has **speaker notes under every slide**: that's your script. Practise it aloud until you can say it while looking at the audience, not the screen. Aim for about 8 minutes including a 3-minute live demo, unless the organisers give a different time (adjust then).
+You present the whole thing. Your script is **[PITCH_SCRIPT.md](PITCH_SCRIPT.md)**: every slide in simple English, all spoken by you, plus hook points, Q&A and a cue card. (It replaces the deck's speaker notes where those give slides to Pankaj or Kishore.) Practise it aloud until you can say it while looking at the audience, not the screen. Aim for about 8 minutes including a 3-minute live demo, unless the organisers give a different time (adjust then).
 
 **Practise like this:**
 1. Saturday: read the notes aloud 3 times. Time yourself.
