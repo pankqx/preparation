@@ -1,6 +1,6 @@
 // Offline shell: cache the app on first load, serve it without a network after.
 // Own cache name: other MindMirror pages on pankqx.github.io keep their caches.
-const CACHE = 'mindmirror-preview-v1'
+const CACHE = 'mindmirror-preview-v2'
 self.addEventListener('install', (e) => {
   self.skipWaiting()
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(['./', './index.html', './manifest.webmanifest', './icon-192.png'])))

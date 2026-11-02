@@ -12,6 +12,8 @@ The Round 1 app (MindMirror v1, source in [pankqx/checking](https://github.com/p
 - It opens with the "Calm the sea" game. Tap the five glowing balls, or tap Skip.
 - To see every screen filled in, pick "Explore with sample data" at the end of onboarding.
 - The microphone and Bluetooth work here, because GitHub Pages serves over HTTPS.
+- The first screen offers three ways in: **Preview** (a sample week), **Voice mode** and **Check-in**.
+- **The necklace works with it.** Run the hub on the laptop and open `https://pankqx.github.io/preparation/?hub=http://localhost:8787` in Chrome on that laptop. What you say into the necklace then shows up in the app and is saved. Steps: [NECKLACE_IN_PREVIEW.md](NECKLACE_IN_PREVIEW.md).
 
 The built files are in [`live-preview/`](live-preview). [`.github/workflows/pages.yml`](.github/workflows/pages.yml) publishes them whenever a push to `main` changes them.
 
