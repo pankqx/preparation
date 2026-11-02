@@ -5,6 +5,16 @@ CODE MEET 2026 Round 2, Srinivas University, **Sunday 1 Nov 10:00 AM, 24 hours, 
 
 This repo holds the plans. The project itself is built from scratch in a new repo during the 24 hours.
 
+## Live preview
+
+The Round 1 app (MindMirror v1, source in [pankqx/checking](https://github.com/pankqx/checking)) runs at **https://pankqx.github.io/preparation/**.
+
+- It opens with the "Calm the sea" game. Tap the five glowing balls, or tap Skip.
+- To see every screen filled in, pick "Explore with sample data" at the end of onboarding.
+- The microphone and Bluetooth work here, because GitHub Pages serves over HTTPS.
+
+The built files are in [`live-preview/`](live-preview). [`.github/workflows/pages.yml`](.github/workflows/pages.yml) publishes them whenever a push to `main` changes them.
+
 ## Read in this order
 
 | File | For | What's in it |
